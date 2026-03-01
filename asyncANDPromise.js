@@ -15,7 +15,7 @@ function waitWrong(ms) {
 }
 
 async function testWrong() {
-  console.log("Start");
+  console.log("Wait wrong Start");
 
   const first = await waitWrong(1000);
   console.log("Returned:", first);
@@ -23,7 +23,7 @@ async function testWrong() {
   const second = await waitWrong(2000);
   console.log("Returned:", second);
 
-  console.log("End");
+  console.log("Wait wrong End");
 }
 
 testWrong();
@@ -92,7 +92,7 @@ Explanation:
 - Code runs sequentially
 */
 
-//__________________________-------------------______________________
+//__________________________---------PART TWO END----------______________________
 
 
 
@@ -105,16 +105,16 @@ Explanation:
 
 // if the test function is not async check the test2 approach
 function test2() {
-  console.log("Start");
+  console.log(" then catch Start");
 
-  wait(1000)
+  wait(10000)
     .then(function(first) {
       console.log(first);
-      return wait(2000);
+      return wait(20000);
     })
     .then(function(second) {
       console.log(second);
-      console.log("End");
+      console.log("then catch End");
     })
     .catch(function(error) {
       console.error("Error:", error);
